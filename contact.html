@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+        }
+        header img {
+            height: 50px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+        header a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #555;
+            border-radius: 5px;
+        }
+        main {
+            padding: 20px;
+        }
+        form {
+            border: 1px solid black;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        label {
+            margin: 10px 0 5px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="submit"] {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://blog.photoadking.com/wp-content/uploads/2023/06/dance-logo-1-.jpg" alt="Site Logo">
+        <h1><a href="index.html">www.Dynamic Dance Company</a></h1>
+        <a href="contact.html">Contact</a>
+    </header>
+
+    <main>
+        <h2><b>About Us</b></h2>
+           <p> Welcome to <b>Dynamic Dance Company</b>, a leader in providing innovative solutions tailored to meet your unique needs. Our dedicated team of professionals is committed to delivering exceptional service and support. We believe in building strong, lasting relationships with our clients by ensuring their satisfaction with every interaction.
+            
+            <h4><b>Contact Us:</b></h4>   
+            We are here to help you with any questions or concerns you may have. Whether you need support with our products and services, want to provide feedback, or just want to learn more about what we do, feel free to reach out to us.
+            <br>
+            Email: support@abcddance.com <br>
+            Phone: (123) 456-7890 <br>
+            Address: 143 Groove street, Downtown, cityvelly, 832107<br><br>            
+            Our customer service team is available from Monday to Friday, 9 AM to 5 PM.<br> 
+            We aim to respond to all inquiries within 24 hours.
+            Thank you for choosing <b>Dynamic Dance Company</b>. We look forward to assisting you!!!
+            <br><Br /><b>...FILL THE FORM FOR BEING PART OF US...</b>
+            </p>
+        <form action = "javascript:submitForm()" onSubmit = "return validate()">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your Name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your Email" required>
+
+            <label for="genre">Favorite Genre:</label>
+            <input list="genres" id="genre" name="genre" placeholder="Select Genre" required>
+            <datalist id="genres">
+                <option value="Rock">
+                <option value="Pop">
+                <option value="Jazz">
+                <option value="Classical">
+                <option value="Hip Hop">
+            </datalist>
+
+            <label>
+                <input type="checkbox" name="newsletter"> Subscribe to our newsletter via email
+            </label>
+
+            <input type="submit" name="submit" value="Submit">
+        </form>
+    </main>
+    <script>
+        function validate() {
+          let validated = true;
+          let ele = document.getElementById("name");
+          if (ele.value.length < 10) {
+            window.alert("Name must be greater than 10 characters");
+            validated = false;
+          }
+          return validated;
+        }
+        function submitForm() {
+          window.alert("Form Submitted");
+        }
+      </script>
+    <footer>
+        <pre><P style="font-size: medium;"> &copy;2024 Dynamic Dance Company. All rights reserved.           Designed By: Dheeraj Kumar Patra</P></pre>
+    </footer>
+</body>
+</html>
