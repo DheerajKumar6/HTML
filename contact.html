@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <title>Contact Page</title>
     <link rel="stylesheet" href="style.css">
     <style>
@@ -20,7 +21,7 @@
             color: white;
         }
         header img {
-            height: 50px;
+            height: 70px;
         }
         header h1 {
             margin: 0;
@@ -87,15 +88,16 @@
             <h4><b>Contact Us:</b></h4>   
             We are here to help you with any questions or concerns you may have. Whether you need support with our products and services, want to provide feedback, or just want to learn more about what we do, feel free to reach out to us.
             <br>
-            Email: support@abcddance.com <br>
-            Phone: (123) 456-7890 <br>
+            Email: support@dynamicdance.com <br>
+            Phone: +91 6203281262 <br>
             Address: 143 Groove street, Downtown, cityvelly, 832107<br><br>            
             Our customer service team is available from Monday to Friday, 9 AM to 5 PM.<br> 
             We aim to respond to all inquiries within 24 hours.
             Thank you for choosing <b>Dynamic Dance Company</b>. We look forward to assisting you!!!
             <br><Br /><b>...FILL THE FORM FOR BEING PART OF US...</b>
             </p>
-        <form action = "javascript:submitForm()" onSubmit = "return validate()">
+        <!-- <form action = "javascript:submitForm()" onSubmit = "return validate()"> -->
+            <form id="contact">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" placeholder="Enter your Name" required>
 
@@ -113,10 +115,10 @@
             </datalist>
 
             <label>
-                <input type="checkbox" name="newsletter"> Subscribe to our newsletter via email
+                <input type="checkbox" name="website"> Subscribe to our website via email
             </label>
 
-            <input type="submit" name="submit" value="Submit">
+            <input type="submit" name="submit">
         </form>
     </main>
     <script>
@@ -129,9 +131,14 @@
           }
           return validated;
         }
-        function submitForm() {
-          window.alert("Form Submitted");
-        }
+        document.getElementById('contact').addEventListener('submit', function(event) {
+            event.preventDefault();
+            Swal.fire({
+                title: 'Dynamic Dance Company',
+                text: 'Thank you for contacting us! Your submission has been received.',
+                icon: 'success'
+            });
+        });
       </script>
     <footer>
         <pre><P style="font-size: medium;"> &copy;2024 Dynamic Dance Company. All rights reserved.           Designed By: Dheeraj Kumar Patra</P></pre>
